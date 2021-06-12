@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+# config/routes.yaml
+forecast:
+    path:       /
+    controller: App\Controller\ForecastController::index
+    methods:    GET|HEAD

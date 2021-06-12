@@ -1,0 +1,111 @@
+PHPUnit 9.5.5 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 7.4.3
+Configuration: /home/msc/code/forecast/phpunit.xml.dist
+
+Testing 
+Processed city Amsterdam | Partly cloudy - Partly cloudy
+Processed city Paris | Partly cloudy - Partly cloudy
+Processed city Rome | Partly cloudy - Partly cloudy
+Processed city Milan | Patchy rain possible - Partly cloudy
+Processed city Barcelona | Partly cloudy - Partly cloudy
+Processed city Nice | Partly cloudy - Partly cloudy
+Processed city Dubai | Partly cloudy - Partly cloudy
+Processed city New York | Partly cloudy - Patchy rain possible
+Processed city Lyon | Partly cloudy - Partly cloudy
+Processed city Bordeaux | Patchy rain possible - Partly cloudy
+Processed city Venice | Partly cloudy - Partly cloudy
+Processed city San Francisco | Partly cloudy - Partly cloudy
+Processed city Orlando | Patchy rain possible - Patchy rain possible
+Processed city Las Vegas | Sunny - Sunny
+Processed city Lisbon | Partly cloudy - Partly cloudy
+Processed city Marrakech | Partly cloudy - Partly cloudy
+Processed city London | Partly cloudy - Partly cloudy
+Processed city Madrid | Patchy rain possible - Patchy rain possible
+Processed city Berlin | Patchy rain possible - Cloudy
+Processed city Prague | Moderate rain - Patchy rain possible
+Processed city Vienna | Patchy rain possible - Patchy rain possible
+Processed city Abu Dhabi | Sunny - Partly cloudy
+Processed city Chicago | Moderate rain - Partly cloudy
+Processed city Turin | Moderate rain - Patchy rain possible
+Processed city Pisa | Partly cloudy - Partly cloudy
+Processed city Mantua | Partly cloudy - Partly cloudy
+Processed city Budapest | Patchy rain possible - Partly cloudy
+Processed city Munich | Patchy rain possible - Patchy rain possible
+Processed city Sydney | Partly cloudy - Partly cloudy
+Processed city Buenos Aires | Partly cloudy - Sunny
+Processed city Washington DC | Patchy rain possible - Patchy rain possible
+Processed city San Diego | Sunny - Sunny
+Processed city Los Angeles | Sunny - Partly cloudy
+Processed city Istanbul | Partly cloudy - Patchy rain possible
+Processed city Krakow | Moderate rain - Moderate rain
+Processed city Lima | Partly cloudy - Partly cloudy
+Processed city Cancun | Moderate rain - Moderate rain
+Processed city Verona | Patchy rain possible - Patchy rain possible
+Processed city Reykjavik | Partly cloudy - Moderate rain
+Processed city Athens | Patchy rain possible - Patchy rain possible
+Processed city Bilbao | Patchy rain possible - Partly cloudy
+Processed city Shanghai | Moderate rain - Patchy rain possible
+Processed city Rio de Janeiro | Moderate rain - Patchy rain possible
+Processed city Melbourne | Partly cloudy - Partly cloudy
+Processed city Innsbruck | Patchy rain possible - Patchy rain possible
+Processed city Victoria Falls | Partly cloudy - Sunny
+Processed city Livingstone | Partly cloudy - Sunny
+Processed city Johannesburg | Partly cloudy - Partly cloudy
+Processed city Cape Town | Patchy rain possible - Partly cloudy
+Processed city Ho Chi Minh | Patchy rain possible - Patchy rain possible
+Processed city Hanoi | Moderate rain - Moderate rain
+Processed city Tusayan | Sunny - Sunny
+Processed city Tampa Bay | Partly cloudy - Patchy rain possible
+Processed city St. Augustine | Moderate rain - Heavy rain
+Processed city Sedona | Sunny - Sunny
+Processed city Seattle | Patchy rain possible - Moderate rain
+Processed city San Antonio | Partly cloudy - Partly cloudy
+Processed city Portland | Patchy rain possible - Heavy rain
+Processed city Phoenix | Sunny - Sunny
+Processed city Philadelphia | Partly cloudy - Patchy rain possible
+Processed city Oahu | Patchy rain possible - Patchy rain possible
+Processed city Niagara Falls | Moderate rain - Patchy rain possible
+Processed city New Orleans | Partly cloudy - Patchy rain possible
+Processed city Nevada | Partly cloudy - Partly cloudy
+Processed city Napa | Partly cloudy - Partly cloudy
+Processed city Monterey | Partly cloudy - Partly cloudy
+Processed city Miami | Patchy rain possible - Patchy rain possible
+Processed city Maui | Patchy rain possible - Patchy rain possible
+Processed city Knoxville | Moderate rain - Patchy rain possible
+Processed city Key West | Partly cloudy - Partly cloudy
+Processed city Kauai | Patchy rain possible - Partly cloudy
+Processed city Jackson Hole | Partly cloudy - Partly cloudy
+Processed city Houston | Partly cloudy - Partly cloudy
+Processed city Honolulu | Patchy rain possible - Patchy rain possible
+Processed city Fort Lauderdale | Patchy rain possible - Patchy rain possible
+Processed city Detroit | Moderate rain - Patchy rain possible
+Processed city Denver | Partly cloudy - Patchy rain possible
+Processed city Dallas | Partly cloudy - Patchy rain possible
+Processed city Cincinnati | Fog - Moderate rain
+Processed city Charleston | Moderate rain - Moderate rain
+Processed city Burlington | Patchy rain possible - Patchy rain possible
+Processed city Boston | Patchy rain possible - Partly cloudy
+Processed city Big Island of Hawaii | Patchy rain possible - Patchy rain possible
+Processed city Austin | Partly cloudy - Partly cloudy
+Processed city Atlanta | Partly cloudy - Patchy rain possible
+Processed city Arizona | Sunny - Sunny
+Processed city Annapolis | Patchy rain possible - Patchy rain possible
+Processed city Anaheim | Sunny - Partly cloudy
+Processed city Sarigerme | Partly cloudy - Partly cloudy
+Processed city Marmaris | Patchy rain possible - Partly cloudy
+Processed city Izmir | Patchy rain possible - Partly cloudy
+Processed city Cappadocia | Patchy rain possible - Patchy rain possible
+Processed city Bodrum | Partly cloudy - Partly cloudy
+Processed city Altinkum-Didim | Partly cloudy - Partly cloudy
+Processed city Bangkok | Patchy rain possible - Patchy rain possible
+Processed city Ljubljana | Partly cloudy - Patchy rain possible
+Processed city Singapore | Moderate rain - Moderate rain
+Processed city Stockholm | Patchy rain possible - Partly cloudy
+Processed city Malmö | Patchy rain possible - Patchy rain possible
+Processed city Gothenburg | Partly cloudy - Partly cloudy
+...                                                                 3 / 3 (100%)
+
+Time: 00:08.919, Memory: 26.00 MB
+
+OK (3 tests, 13 assertions)
