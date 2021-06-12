@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="forecastPHPUnit" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-    <CommandLine workingDirectory="$PROJECT_DIR$" />
-    <TestRunner directory="$PROJECT_DIR$" />
-    <method v="2" />
-  </configuration>
-</component>
