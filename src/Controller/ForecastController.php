@@ -51,7 +51,6 @@ class ForecastController extends AbstractController
         }
 
         $actual_url = $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
-        //$actual_url = app . request . getBaseURL();
         $log_url = $actual_url . "/console.log";
         return $this->json([
             'message' => 'Forecast loaded. Please check console messages, or in the following url shown.',
