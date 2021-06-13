@@ -14,12 +14,12 @@ class ForecastAppTest extends WebTestCase
 
         // gets the special container that allows fetching private services
         $container = self::$container;
-
         $forecast = $container->get(ForecastController::class);
 
-        $expected = json_encode(array('message' => 'Forecast loaded. Please check console messages.'));
+        $expected = 'Forecast loaded. Please check console messages, or in the following url shown.';
         $response = $forecast->index();
-        $this->assertEquals($expected, $response->getContent());
+        $jsonresp = json_decode($response->getContent(), true);
+        $this->assertEquals($expected, $jsonresp['message']);
     }
 
 }

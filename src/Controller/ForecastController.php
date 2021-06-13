@@ -5,10 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 use App\Utils\Forecast;
 
@@ -17,19 +15,21 @@ class ForecastController extends AbstractController
 
     /**
      * @throws RedirectionExceptionInterface
-     * @throws DecodingExceptionInterface
      * @throws ClientExceptionInterface
-     * @throws TransportExceptionInterface
      * @throws ServerExceptionInterface
      */
     public function index(): Response
     {
+        if ($_ENV['APP_ENV'] == 'test') $test = true; else $test = false;
+
         $forecast = new Forecast($this);
 
         $cities = $forecast->fetchCities();
-
-        //var_dump($cities);
-        //for i=0,len($cities),i++ {
+        $publicroot = realpath("./../public");
+        $stdout = fopen("php://stdout", "w");
+        if (!$test) {
+            $fileout = fopen($publicroot . "/console.log", "w");
+        }
         foreach ($cities as $city) {
 
             $weather = $forecast->fetchForecast($city["latitude"], $city["longitude"]);
@@ -38,14 +38,24 @@ class ForecastController extends AbstractController
             $tomorrow = $weather["forecast"]["forecastday"]["1"]["day"]["condition"]["text"];
 
             $text = "Processed city " . $city["name"] . " | " . $today . " - " . $tomorrow;
-            $stdout = fopen("php://stdout", "w");
-            fwrite($stdout, $text . "\n");
-            fclose($stdout);
 
+            fwrite($stdout, $text . "\n");
+            if (!$test) fwrite($fileout, $text . "\n");
         }
 
+        fclose($stdout);
+        if (!$test) {
+            fclose($fileout);
+        } else {
+            $_SERVER['HTTP_HOST'] = "127.0.0.1:8000";
+        }
+
+        $actual_url = $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
+        //$actual_url = app . request . getBaseURL();
+        $log_url = $actual_url . "/console.log";
         return $this->json([
-            'message' => 'Forecast loaded. Please check console messages.',
+            'message' => 'Forecast loaded. Please check console messages, or in the following url shown.',
+            'url' => $log_url
         ]);
 
     }

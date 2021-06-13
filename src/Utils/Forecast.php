@@ -59,11 +59,6 @@ class Forecast
             'GET',
             $url
         );
-        //$statusCode = $response->getStatusCode();
-        // $statusCode = 200
-        //$contentType = $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-        //$content = $response->getContent();
         return $response->toArray();
     }
 
