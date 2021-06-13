@@ -1,3 +1,8 @@
+LABEL version="0.1"
+LABEL maintaner="Manuel Salguero"
+LABEL release-date="2021-06-13"
+LABEL promoted="true"
+
 FROM kirschbaumdevelopment/laravel-test-runner
 
 RUN apt-get update && apt-get upgrade -y
