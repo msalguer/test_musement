@@ -1,0 +1,48 @@
+"/cities/{cityId}/forecast/{forecastDay}/": { 
+    "get": {
+        "tags": [
+            "city",
+            "forecast"
+        ],
+        "summary": "Get forecast wheater for one day",
+        "operationId": "GetCityForecast",
+        "parameters": [
+            {
+                "$ref": "#/components/parameters/X-Musement-Version"
+            },
+            {
+                "$ref": "#/components/parameters/Accept-Language"
+            },
+            {
+                "$ref": "#/components/parameters/cityId"
+            },
+            { 
+                "$ref": "#/components/parameters/forecastType"
+            },
+            {
+                "$ref": "#/components/parameters/forecastDay"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Returned when successful",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/CityForecast"
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Returned when resource is not found"
+            },
+            "503": {
+                "description": "Returned when the service is unavailable"
+            }
+        }
+    }
+},

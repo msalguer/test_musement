@@ -1,0 +1,16 @@
+"CityForecast":{
+    "properties": {
+        "forecast_today":{
+        "description": "Weather forecast for the city, for today",
+        "type": "string"
+        },
+        "forecast_tomorrow":{
+        "description": "Weather forecast for the city, for tomorrow",
+        "type": "string"
+        }   
+    },
+    "type": "object",
+    "xml": {
+        "name": "CityForecast"
+    }
+},
