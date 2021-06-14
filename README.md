@@ -13,7 +13,7 @@ Gets the list of the cities from Musement's API for each city gets the forecast 
 
 ### Requirements
 
-PHP 7.x
+PHP >=7.3
 Symfony 4.x
 Apache2.x (optional for this test purpose. You only see the most results from the stdout/console output)
 
