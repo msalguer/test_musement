@@ -5406,6 +5406,111 @@
                         "description": "Returned when the service is unavailable"
                     }
                 }
+            },
+            "post": {
+                "tags": [
+                    "city",
+                    "forecast"
+                ],
+                "summary": "Create a forecast wheather for one day",
+                "operationId": "PostCityForecast",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/X-Musement-Version"
+                    },
+                    {
+                        "$ref": "#/components/parameters/Accept-Language"
+                    },
+                    {
+                        "$ref": "#/components/parameters/cityId"
+                    },
+                    {
+                        "$ref": "#/components/parameters/forecastType"
+                    },
+                    {
+                        "$ref": "#/components/parameters/forecastDay"
+                    }
+                ],
+                "requestBody": {
+                    "description": "City Forecast post request",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CityForecast"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returned when successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Event"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Returned when the service is unavailable"
+                    },
+                    "400": {
+                        "description": "Returned if sent data contains errors"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "city",
+                    "forecast"
+                ],
+                "summary": "Update a forecast wheather for one day",
+                "operationId": "PostCityForecast",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/X-Musement-Version"
+                    },
+                    {
+                        "$ref": "#/components/parameters/Accept-Language"
+                    },
+                    {
+                        "$ref": "#/components/parameters/cityId"
+                    },
+                    {
+                        "$ref": "#/components/parameters/forecastDay"
+                    }
+                ],
+                "requestBody": {
+                    "description": "City Forecast put request",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CityForecast"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returned when successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Event"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Returned when the service is unavailable"
+                    },
+                    "400": {
+                        "description": "Returned if sent data contains errors"
+                    }
+                }
             }
         },
         "/cities/{cityId}/verticals": {
@@ -18488,14 +18593,21 @@
             },
             "CityForecast":{
                 "properties": {
-                    "forecast_today":{
-                    "description": "Weather forecast for the city, for today",
-                    "type": "string"
+                    "id": {
+                        "type": "integer"
                     },
-                    "forecast_tomorrow":{
-                    "description": "Weather forecast for the city, for tomorrow",
+                    "idCity": {
+                        "type": "integer"
+                    },
+                    "day":{
+                        "description": "Day of the forecast | Use format: YYYY-MM-DD",
+                        "type": "string",
+                        "format": "date"
+                        },
+                    "forecast":{
+                    "description": "Weather forecast for the city, for this day",
                     "type": "string"
-                    }   
+                    }
                 },
                 "type": "object",
                 "xml": {
@@ -23158,21 +23270,12 @@
                 "schema": {
                     "type": "integer"
                 }
-            },
-            "forecastDay": {
-                "name": "forecastDay",
-                "in": "query",
-                "description": "Forecast weather date | Use format: YYYY-MM-DD",
-                "required": false,
-                "schema": {
-                    "type": "string",
-                    "format": "date"
-                }
-            },      
+            },     
             "forecastType": {
                 "name": "forecastType",
                 "in": "query",
                 "description": "Type of Forecast Weather for the City",
+                "required": false,
                 "schema": {
                     "type": "string",
                     "default": "today",
@@ -23182,7 +23285,17 @@
                         "day"
                     ]
                 }
-            },      
+            },    
+            "forecastDay": {
+                "name": "forecastDay",
+                "in": "query",
+                "description": "Forecast weather date | Use format: YYYY-MM-DD",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },   
             "venue": {
                 "name": "venue",
                 "in": "query",

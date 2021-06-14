@@ -1,16 +1,23 @@
 "CityForecast":{
     "properties": {
-        "forecast_today":{
-        "description": "Weather forecast for the city, for today",
-        "type": "string"
+        "id": {
+            "type": "integer"
         },
-        "forecast_tomorrow":{
-        "description": "Weather forecast for the city, for tomorrow",
+        "idCity": {
+            "type": "integer"
+        },
+        "day":{
+            "description": "Day of the forecast | Use format: YYYY-MM-DD",
+            "type": "string",
+            "format": "date"
+            },
+        "forecast":{
+        "description": "Weather forecast for the city, for this day",
         "type": "string"
-        }   
+        }
     },
     "type": "object",
     "xml": {
         "name": "CityForecast"
     }
-},
+}

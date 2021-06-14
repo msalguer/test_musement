@@ -1,4 +1,4 @@
-"/cities/{cityId}/forecast/{forecastDay}/": { 
+"/cities/{cityId}/forecast/{forecastType}/{forecastDay}/": {
     "get": {
         "tags": [
             "city",
@@ -16,7 +16,7 @@
             {
                 "$ref": "#/components/parameters/cityId"
             },
-            { 
+            {
                 "$ref": "#/components/parameters/forecastType"
             },
             {
@@ -44,5 +44,110 @@
                 "description": "Returned when the service is unavailable"
             }
         }
+    },
+    "post": {
+        "tags": [
+            "city",
+            "forecast"
+        ],
+        "summary": "Create a forecast wheather for one day",
+        "operationId": "PostCityForecast",
+        "parameters": [
+            {
+                "$ref": "#/components/parameters/X-Musement-Version"
+            },
+            {
+                "$ref": "#/components/parameters/Accept-Language"
+            },
+            {
+                "$ref": "#/components/parameters/cityId"
+            },
+            {
+                "$ref": "#/components/parameters/forecastType"
+            },
+            {
+                "$ref": "#/components/parameters/forecastDay"
+            }
+        ],
+        "requestBody": {
+            "description": "City Forecast post request",
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/CityForecast"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Returned when successful",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Event"
+                        }
+                    }
+                }
+            },
+            "503": {
+                "description": "Returned when the service is unavailable"
+            },
+            "400": {
+                "description": "Returned if sent data contains errors"
+            }
+        }
+    },
+    "put": {
+        "tags": [
+            "city",
+            "forecast"
+        ],
+        "summary": "Update a forecast wheather for one day",
+        "operationId": "PostCityForecast",
+        "parameters": [
+            {
+                "$ref": "#/components/parameters/X-Musement-Version"
+            },
+            {
+                "$ref": "#/components/parameters/Accept-Language"
+            },
+            {
+                "$ref": "#/components/parameters/cityId"
+            },
+            {
+                "$ref": "#/components/parameters/forecastDay"
+            }
+        ],
+        "requestBody": {
+            "description": "City Forecast put request",
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/CityForecast"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Returned when successful",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Event"
+                        }
+                    }
+                }
+            },
+            "503": {
+                "description": "Returned when the service is unavailable"
+            },
+            "400": {
+                "description": "Returned if sent data contains errors"
+            }
+        }
     }
-},
+}
