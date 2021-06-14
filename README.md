@@ -13,9 +13,8 @@ Gets the list of the cities from Musement's API for each city gets the forecast 
 
 ### Requirements
 
-PHP 7.x
-Symfony 4.x
-Apache2.x (optional for this test purpose. You only see the most results from the stdout/console output)
+* PHP >=7.3
+* Symfony 4.x
 
 ### Test app:
 php bin/phpunit -v
@@ -27,6 +26,9 @@ php bin/console server:run
 testresults.log
 
 ### Run in Docker container:
-*  docker pull msalguer/test_musement
+* docker pull msalguer/test_musement
 * docker run -p 8000:8000 --name cmuse -d msalguer/test_musement
 * Test with: http://127.0.0.1:8000
+
+### OpenApi definition for musement test exercise:
+Openapi folder contains full openapi modified, and files with fragments of changes.
