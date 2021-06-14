@@ -30,3 +30,6 @@ testresults.log
 *  docker pull msalguer/test_musement
 * docker run -p 8000:8000 --name cmuse -d msalguer/test_musement
 * Test with: http://127.0.0.1:8000
+
+### OpenApi definition for musement test exercise:
+Openapi folder contains full openapi modified, and files with fragments of changes.
