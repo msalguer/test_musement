@@ -13,7 +13,7 @@ class ForecastTest extends TestCase
 
 {
 
-    const urlFor = "http://localhost:8000";
+    const URLFORECAST = "http://localhost:8000";
 
     /**
      * @throws ServerExceptionInterface
