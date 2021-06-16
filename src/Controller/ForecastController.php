@@ -20,7 +20,11 @@ class ForecastController extends AbstractController
      */
     public function index(): Response
     {
-        if ($_ENV['APP_ENV'] == 'test') $test = true; else $test = false;
+        if ($_ENV['APP_ENV'] == 'test') {
+            $test = true;
+        } else {
+            $test = false;
+        }
 
         $forecast = new Forecast($this);
 
@@ -40,7 +44,9 @@ class ForecastController extends AbstractController
             $text = "Processed city " . $city["name"] . " | " . $today . " - " . $tomorrow;
 
             fwrite($stdout, $text . "\n");
-            if (!$test) fwrite($fileout, $text . "\n");
+            if (!$test) {
+                fwrite($fileout, $text . "\n");
+            }
         }
 
         fclose($stdout);
@@ -50,7 +56,7 @@ class ForecastController extends AbstractController
             $_SERVER['HTTP_HOST'] = "127.0.0.1:8000";
         }
 
-        $actual_url = $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
+        $actual_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
         $log_url = $actual_url . "/console.log";
         return $this->json([
             'message' => 'Forecast loaded. Please check console messages, or in the following url shown.',
