@@ -32,3 +32,7 @@ testresults.log
 
 ### OpenApi definition for musement test exercise:
 Openapi folder contains full openapi modified, and files with fragments of changes.
+
+### Static analysis with SonarQube
+https://sonarcloud.io/dashboard?id=msalguer_test_musement
+
