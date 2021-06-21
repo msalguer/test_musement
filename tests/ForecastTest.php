@@ -12,9 +12,7 @@ use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 class ForecastTest extends TestCase
 
 {
-
-    const URLFORECAST = "http://localhost:8000";
-
+    
     /**
      * @throws ServerExceptionInterface
      * @throws RedirectionExceptionInterface
