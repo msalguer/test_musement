@@ -31,6 +31,7 @@ class ForecastController extends AbstractController
         $cities = $forecast->fetchCities();
         $publicroot = realpath("./../public");
         $stdout = fopen("php://stdout", "w");
+
         if (!$test) {
             $fileout = fopen($publicroot . "/console.log", "w");
         }
