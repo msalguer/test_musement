@@ -34,4 +34,6 @@ jobs:
 
 #    - name: Run test suite
 #      run: 
- 
+    - name: Don't kill instace
+      if: ${{ failure() }}
+      run: sleep 10m # Prevent to killing instance after failure
