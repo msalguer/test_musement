@@ -1,22 +1,21 @@
 name: phpunit
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+on: [push]
+
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+      - uses: php-actions/composer@v5
 
-      - name: PHPUnit
-        uses: chindit/actions-phpunit-symfony@master
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v2
+        env:
+          TEST_NAME: Musement Tests
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: ./phpunit.xml.dist
 
-      - name: Run PHPUnit
-        working-directory: ./
-        run: php bin/phpunit
-        
