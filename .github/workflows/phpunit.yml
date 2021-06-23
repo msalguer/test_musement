@@ -15,20 +15,3 @@ jobs:
 
       - name: PHPUnit
         uses: chindit/actions-phpunit-symfony@master
-        
-#    steps:
-#      - uses: actions/checkout@v2
-
-#      - uses: php-actions/composer@v5
-
-#      - name: PHPUnit Tests
-#        uses: php-actions/phpunit@v2
-#        env:
-#          TEST_NAME: Musement Tests
-#        with:
-#          bootstrap: vendor/autoload.php
-#          configuration: ./phpunit.xml.dist
-
-#      - run: composer install --prefer-dist --no-progress --no-suggest
-#      - run: php bin/phpunit
-      
