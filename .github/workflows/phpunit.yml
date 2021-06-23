@@ -11,11 +11,14 @@ jobs:
 
       - uses: php-actions/composer@v5
 
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
-        env:
-          TEST_NAME: Musement Tests
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: ./phpunit.xml.dist
+#      - name: PHPUnit Tests
+#        uses: php-actions/phpunit@v2
+#        env:
+#          TEST_NAME: Musement Tests
+#        with:
+#          bootstrap: vendor/autoload.php
+#          configuration: ./phpunit.xml.dist
 
+      - run: composer install --prefer-dist --no-progress --no-suggest
+      - run: php bin/phpunit
+      
