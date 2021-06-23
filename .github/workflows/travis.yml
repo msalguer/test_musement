@@ -1,3 +1,5 @@
+on: push
+
 addons:
   sonarcloud:
     organization: "msalguer" # the key of the org you chose at step #3
