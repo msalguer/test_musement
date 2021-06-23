@@ -1,4 +1,4 @@
-name: phpunit
+name: PHPUnit
 
 on: [push]
 
@@ -11,6 +11,20 @@ jobs:
 
       - uses: php-actions/composer@v5
 
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v2
+        env:
+          TEST_NAME: Musement Test
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: ./phpunit.xml.dist
+          args: --coverage-clover
+    
+#    steps:
+#      - uses: actions/checkout@v2
+
+#      - uses: php-actions/composer@v5
+
 #      - name: PHPUnit Tests
 #        uses: php-actions/phpunit@v2
 #        env:
@@ -19,6 +33,6 @@ jobs:
 #          bootstrap: vendor/autoload.php
 #          configuration: ./phpunit.xml.dist
 
-      - run: composer install --prefer-dist --no-progress --no-suggest
-      - run: php bin/phpunit
+#      - run: composer install --prefer-dist --no-progress --no-suggest
+#      - run: php bin/phpunit
       
