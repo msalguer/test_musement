@@ -35,6 +35,10 @@
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
 
+    <logging>
+        <log type="junit" target="test-reports/phpunit.junit.xml"/>
+        <log type="coverage-clover" target="test-reports/phpunit.coverage.xml"/>
+    </logging>
     <!-- Run `composer require symfony/panther` before enabling this extension -->
     <!--
     <extensions>
