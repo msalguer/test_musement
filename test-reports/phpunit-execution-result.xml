@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="3" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="8.585304">
+    <testsuite name="Forecast - Project Test Suite" tests="3" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="8.585304">
+      <testsuite name="App\Tests\ForecastAppTest" file="/home/msc/code/forecast/tests/ForecastAppTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="8.505945">
+        <testcase name="testForecastController" class="App\Tests\ForecastAppTest" classname="App.Tests.ForecastAppTest" file="/home/msc/code/forecast/tests/ForecastAppTest.php" line="11" assertions="1" time="8.505945"/>
+      </testsuite>
+      <testsuite name="App\Tests\ForecastTest" file="/home/msc/code/forecast/tests/ForecastTest.php" tests="2" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.079359">
+        <testcase name="testFetchForecast" class="App\Tests\ForecastTest" classname="App.Tests.ForecastTest" file="/home/msc/code/forecast/tests/ForecastTest.php" line="21" assertions="8" time="0.014753"/>
+        <testcase name="testFetchCities" class="App\Tests\ForecastTest" classname="App.Tests.ForecastTest" file="/home/msc/code/forecast/tests/ForecastTest.php" line="46" assertions="4" time="0.064606"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
