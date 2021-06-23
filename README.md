@@ -1,5 +1,7 @@
 # test_musement README 
 ---------------------
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=msalguer_test_musement)](https://sonarcloud.io/dashboard?id=msalguer_test_musement)
+
 This is a test developed in Symfony 4. With Testing TDD and passing Sonarlint static analysis.
 
 ### Author: Manuel Salguero
