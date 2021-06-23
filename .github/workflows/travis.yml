@@ -1,9 +1,20 @@
-on: push
-
+language: php
+php:
+  - '7.4'
 addons:
   sonarcloud:
-    organization: "msalguer" # the key of the org you chose at step #3
+    organization: "msalguer"
+    token:
+      secure: $SONAR_TOKEN
+#env:
+#  - SIMPLETEST_DB=sqlite://testdb.sqlite
+install:
+  - composer install #create-project drupal-composer/drupal-project:8.x-dev drupal --stability dev --no-interaction
+  #- composer require -d drupal 'drupal/flag:4.0-alpha2'
+  #- patch -d drupal/web -p1 < sqlite-driver-exception.patch
+  #- patch -d drupal/web/core -p1 < travis-ci-phpunit.xml.dist.patch
+  #- mkdir -p drupal/web/modules/my_module && cp -a my_module* tests templates src config drupal/web/modules/my_module
 script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
+  #- drupal/vendor/bin/phpunit -c drupal/web/core drupal/web/modules/my_module/tests/ --coverage-clover clover.xml --log-junit junit.log
+  - bin/phpunit -v  #--coverage-clover clover.xml --log-junit junit.log
   
